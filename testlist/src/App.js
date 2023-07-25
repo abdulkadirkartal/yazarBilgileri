@@ -27,26 +27,25 @@ const App = () => {
       alert("Gelecekteki bir tarih seçilemez!");
       return;
     }
-  
-    if(yazar.length===0){
+
+    if (yazar.length === 0) {
       alert("Yazar İsmini Giriniz!")
       return;
     }
-    else if(yazar.length>yazarMaxKarakter){
+    else if (yazar.length > yazarMaxKarakter) {
       alert("Yazar İsmi En Fazla 20 Karakterden Oluşmalıdır");
       return
     }
-    
-    if(kitap.length===0){
+
+    if (kitap.length === 0) {
       alert("Lütfen Kitap İsmi Giriniz")
       return;
     }
-    else if(kitap.length>kitapMaxKarakter){
+    else if (kitap.length > kitapMaxKarakter) {
       alert("Kitap İsmi En Fazla 15 Karakterden Oluşmalıdır!")
       return;
     }
 
-    //! tekrar et 
     const updatedList = editId !== null
       ? list.map((item) => item.id === editId ? { ...item, yazar, kitap, tarih } : item)
       : [...list, { id: generateRandomId(), yazar, kitap, tarih }];
@@ -89,7 +88,7 @@ const App = () => {
         setTarih={setTarih}
         handleSubmit={handleSubmit}
 
-        
+
       />
 
       <TestList
@@ -102,4 +101,3 @@ const App = () => {
 };
 
 export default App;
-//karekter sınıır uzunluğun kont. boş olmasın inputlar. ileri tarihi seçme
